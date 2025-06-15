@@ -1,0 +1,20 @@
+# Gunakan runtime Java 17, sesuai dengan JDK yang kita gunakan
+runtime: java17
+
+# Instance class F1 adalah bagian dari paket gratis (free tier)
+instance_class: F1
+
+# Pengaturan untuk menangani URL
+handlers:
+  # Handler untuk file statis seperti CSS dan gambar agar lebih cepat diakses
+  - url: /css
+    static_dir: css
+  - url: /img
+    static_dir: img
+  - url: /uploads
+    static_dir: uploads
+
+  # Handler untuk semua permintaan lainnya (*.jsp, servlet, dll)
+  # Ini akan diteruskan ke aplikasi web Java Anda
+  - url: /.*
+    script: auto
